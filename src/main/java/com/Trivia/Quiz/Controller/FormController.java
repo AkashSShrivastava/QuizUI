@@ -41,7 +41,7 @@ public class FormController  {
             if(bindingResult.hasFieldErrors("email"))
                 model.addAttribute("user",new UserContact("","","",true,"InValid Email! 😠"));
             else
-                model.addAttribute("user",new UserContact("","","",true,"Error in Sending Message 😥"));
+                model.addAttribute("user",new UserContact("","","",true,"Add Message 🙏"));
 
             return new ModelAndView("home", (Map<String, ?>)model);
         }
