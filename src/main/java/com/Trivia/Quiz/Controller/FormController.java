@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/home")
 public class FormController  {
 
     @Autowired
@@ -26,13 +26,13 @@ public class FormController  {
         return "redirect:/home";
     }
 
-    @GetMapping("/home")
+    @GetMapping
     public String formGet(Model model) {
         model.addAttribute("user",new UserContact());
         return "home";
     }
 
-    @PostMapping("/home")
+    @PostMapping
     public ModelAndView formPost(@Valid UserContact user, BindingResult bindingResult, Model model)
     {
 

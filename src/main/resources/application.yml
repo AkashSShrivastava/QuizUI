@@ -1,0 +1,5 @@
+spring:
+  profile:
+    active: dev
+
+email: sas5198sas@gmail.com

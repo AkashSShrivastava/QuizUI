@@ -5,7 +5,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Quizzz - Welcome to Trivia</title>
-	<meta charset="utf-8" />
+	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -142,23 +142,27 @@
 	<section id="contact">
 		<div class="inner">
 			<section>
-				<form action="#" th:action="@{/home}" method="post" th:object="${user}">
+				<form th:action="@{/home}" method="post" th:object="${user}">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
 							<input type="text" name="name" id="name" th:field="*{name}" required/>
-							<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+							<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name</td>
 						</div>
 						<div class="field half">
 							<label for="email">Email</label>
 							<input type="text" name="email" id="email" th:field="*{email}" required/>
-							<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</td>
+							<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email</td>
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
 							<textarea name="message" id="message" rows="6" th:field="*{message}"></textarea>
 						</div>
 					</div>
+
+<!--					<ul class="actions">-->
+<!--						<li><a href="#contact" class="button next scrolly">Rate us 🙏</a></li>-->
+<!--					</ul>-->
 					<ul class="actions">
 						<li><input type="submit" value="Send Message" class="primary" /></li>
 						<li><input type="reset" value="Clear" /></li>

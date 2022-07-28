@@ -1,11 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
-/*
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -2901,6 +2896,7 @@ input, select, textarea {
 
 		}
 
+
 /* Contact Method */
 
 	.contact-method {
@@ -3619,6 +3615,187 @@ input, select, textarea {
 		#main.alt {
 			background-color: transparent;
 			border-bottom: solid 1px rgba(212, 212, 255, 0.1);
+		}
+
+/* rating */
+
+	.rating {
+		align-items: center;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		border-top: 0 !important;
+	}
+
+		.rating + * {
+			border-top: 0 !important;
+		}
+
+		.rating article {
+
+
+			padding: 2em 2em 1em 2em ;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			cursor: default;
+			height: 60vh;
+			max-height: 60em;
+			min-height: 23em;
+			overflow: hidden;
+			position: relative;
+			width: 40%;
+		}
+
+			.rating article .image {
+				display: none;
+			}
+
+			.rating article header {
+				position: relative;
+				z-index: 3;
+			}
+
+			.rating article h3 {
+				font-size: 1.75em;
+			}
+
+				.rating article h3 a:hover {
+					color: inherit !important;
+				}
+
+			.rating article .link.primary {
+				border: 0;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 4;
+			}
+
+			.rating article:before {
+				-moz-transition: opacity 0.5s ease;
+				-webkit-transition: opacity 0.5s ease;
+				-ms-transition: opacity 0.5s ease;
+				transition: opacity 0.5s ease;
+				bottom: 0;
+				content: '';
+				display: block;
+				height: 100%;
+				left: 0;
+				opacity: 0.1;
+				position: absolute;
+				width: 100%;
+				z-index: 2;
+			}
+
+			.rating article:after {
+				background-color: rgba(36, 41, 67, 0.25);
+				content: '';
+				display: block;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 1;
+			}
+
+			.rating article:hover:before {
+				opacity: 0;
+			}
+
+			.rating article.is-transitioning {
+				-moz-transform: scale(0.95);
+				-webkit-transform: scale(0.95);
+				-ms-transform: scale(0.95);
+				transform: scale(0.95);
+				-moz-filter: blur(0.5em);
+				-webkit-filter: blur(0.5em);
+				-ms-filter: blur(0.5em);
+				filter: blur(0.5em);
+				opacity: 0;
+			}
+
+			.rating article:nth-child(4n - 1), .rating article:nth-child(4n - 2) {
+				width: 60%;
+			}
+
+			.rating article:nth-child(6n - 5):before {
+				background-color: #6fc3df;
+			}
+
+			.rating article:nth-child(6n - 4):before {
+				background-color: #8d82c4;
+			}
+
+			.rating article:nth-child(6n - 3):before {
+				background-color: #ec8d81;
+			}
+
+			.rating article:nth-child(6n - 2):before {
+				background-color: #e7b788;
+			}
+
+			.rating article:nth-child(6n - 1):before {
+				background-color: #8ea9e8;
+			}
+
+			.rating article:nth-child(6n):before {
+				background-color: #87c5a4;
+			}
+
+		@media screen and (max-width: 1280px) {
+
+			.rating article {
+				padding: 4em 3em 2em 3em ;
+				height: 30vh;
+				max-height: 30em;
+				min-height: 20em;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.rating article {
+				width: 50% !important;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.rating article {
+				padding: 3em 1.5em 1em 1.5em ;
+				height: 16em;
+				max-height: none;
+				min-height: 0;
+			}
+
+				.rating article h3 {
+					font-size: 1.5em;
+				}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.rating {
+				display: block;
+			}
+
+				.rating article {
+					height: 20em;
+					width: 100% !important;
+				}
+
 		}
 
 /* Contact */
