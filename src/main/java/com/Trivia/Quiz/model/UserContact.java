@@ -14,6 +14,7 @@ public class UserContact {
     private String email;
     private boolean error;
     private String display;
+    private int rate;
 
     public UserContact() {
     }
@@ -68,8 +69,23 @@ public class UserContact {
         this.display = display;
     }
 
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
     @Override
     public String toString() {
-        return super.toString();
+        return "UserContact{" +
+                "name='" + name + '\'' +
+                ", message='" + message + '\'' +
+                ", email='" + email + '\'' +
+                ", error=" + error +
+                ", display='" + display + '\'' +
+                ", rate=" + rate +
+                '}';
     }
 }

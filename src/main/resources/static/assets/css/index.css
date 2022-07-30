@@ -110,8 +110,78 @@ html {
     overflow: clip;
   }
 
-  #box1-right{
-    background:green;
-    float:right;
+  .heading-review {
+    font-size: 30px;
+    margin-right: 25px;
   }
+
+  #box1-right{
+    background:transparent;
+    position: relative;
+    width:55%;
+    height: 25em;
+    float:right;
+    font-size: 11pt;
+  }
+
+/* Three column layout */
+.side-r {
+  float: left;
+  width: 18%;
+  margin-top: 5%;
+}
+
+.middle-r {
+  float: left;
+  width: 68%;
+  margin-top: 6%;
+}
+
+/* Place text to the right */
+.right-r {
+  text-align: right;
+  width: 12%;
+}
+
+/* Clear floats after the columns */
+.rows:after {
+  content: "";
+  display: table;
+  clear: both;
+  letter-spacing: 1px;
+  margin: 30px 0px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1pt;
+}
+
+/* The bar container */
+.bar-container {
+display: flex;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: green;}
+.bar-4 {width: 30%; height: 18px; background-color: orange;}
+.bar-3 {width: 10%; height: 18px; background-color: orange;}
+.bar-2 {width: 4%; height: 18px; background-color: orange;}
+.bar-1 {width: 15%; height: 18px; background-color: red;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  /* Hide the right column on small screens */
+  .right {
+    display: none;
+  }
+}
 

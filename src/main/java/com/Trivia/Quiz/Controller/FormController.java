@@ -15,16 +15,11 @@ import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping({"/","/home"})
 public class FormController  {
 
     @Autowired
     SaveMessageService saveMessageService;
-
-    @GetMapping("/")
-    public String index() {
-        return "redirect:/home";
-    }
 
     @GetMapping
     public String formGet(Model model) {
@@ -48,7 +43,7 @@ public class FormController  {
 
         model.addAttribute("user",new UserContact("","","",false,"Message Sent! 😁"));
         saveMessageService.saveMessage("subject", user.getMessage());
-        System.out.println(model);
+        System.out.println(user.toString());
         return new ModelAndView("home", (Map<String, ?>) model);
     }
 }
