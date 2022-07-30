@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class ControllerClass {
 
-    @GetMapping("/")
-    public String getDefaultHtmlPage()
-    {
-        return "home";
-    }
     @GetMapping("/{path}")
     public String getHtmlPage(@PathVariable String path)
     {

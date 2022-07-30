@@ -1,0 +1,187 @@
+html {
+    transition: all 0.5s ease-out;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  .split-view {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+  }
+
+
+  .box {
+    border: none !important;
+    position: relative;
+    height: 100%;
+    transition: 0.6s all cubic-bezier(0.2, 0.6, 0.7, 1);
+    background-position: center;
+  }
+
+  .box:hover {
+    flex-basis: calc(100% / 13 * 11);
+    overflow: hidden;
+  }
+
+  .box__overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.8s all ease-out;
+    transition: 0.8s all cubic-bezier(1, 0, 0, 1);
+  }
+
+  .box-1 {
+    position: relative;
+    flex-basis: 22%;
+    background-size: relative;
+  }
+
+  .box-1 .box__overlay {
+    background-color: transparent;
+  }
+
+    .speed-half {
+          display:none;
+        }
+
+     .box-1:hover .speed-half {
+        display:block;
+        background-color: transparent;
+        position: absolute;
+        align: left;
+        right: 0px;
+        width: 100%;
+      }
+
+  .box-1:hover .box__overlay{
+    background-color: transparent;
+  }
+
+  .box-1 .box__title {
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    margin: 0.5em 0.8em;
+    color: white;
+    font-size: calc(30px + 20 * ((100vw - 320px) / 680));
+    word-spacing: 100vw;
+  }
+
+  .box-2 {
+    flex-basis: 80%;
+    background-size: cover;
+    font-family: 'Kanit', sans-serif;
+  }
+
+  .box-2 .box__overlay {
+    background-color: transparent;
+  }
+
+  .box-2:hover .box__overlay {
+    background-color: transparent;
+    position: relative;
+    overflow-y: scroll;
+  }
+
+  .box-2 .box__title {
+    position: relative;
+    bottom: 0;
+    text-align: right;
+    margin: 0.5em 0.8em;
+    color: #fff;
+    font-size: calc(30px + 15 * ((100vw - 320px) / 680));
+    word-spacing: 100vw;
+  }
+
+  .boxx{
+    width: relative;
+    height: 25em;
+    overflow: clip;
+  }
+
+  .heading-review {
+    font-size: 30px;
+    margin-right: 25px;
+  }
+
+  #box1-right{
+    background:transparent;
+    position: relative;
+    width:55%;
+    height: 25em;
+    float:right;
+    font-size: 11pt;
+  }
+
+/* Three column layout */
+.side-r {
+  float: left;
+  width: 18%;
+  margin-top: 5%;
+}
+
+.middle-r {
+  float: left;
+  width: 68%;
+  margin-top: 6%;
+}
+
+/* Place text to the right */
+.right-r {
+  text-align: right;
+  width: 12%;
+}
+
+/* Clear floats after the columns */
+.rows:after {
+  content: "";
+  display: table;
+  clear: both;
+  letter-spacing: 1px;
+  margin: 30px 0px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1pt;
+}
+
+/* The bar container */
+.bar-container {
+display: flex;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: green;}
+.bar-4 {width: 30%; height: 18px; background-color: orange;}
+.bar-3 {width: 10%; height: 18px; background-color: orange;}
+.bar-2 {width: 4%; height: 18px; background-color: orange;}
+.bar-1 {width: 15%; height: 18px; background-color: red;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  /* Hide the right column on small screens */
+  .right {
+    display: none;
+  }
+}
+

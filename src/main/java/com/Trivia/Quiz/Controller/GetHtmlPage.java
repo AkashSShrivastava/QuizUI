@@ -1,7 +1,5 @@
 package com.Trivia.Quiz.Controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +14,7 @@ public class GetHtmlPage {
         htmlPage.put("index","index");
         htmlPage.put("cpp","cpp");
         htmlPage.put("generic","generic");
+        htmlPage.put("saved","saved");
         htmlPage.put("test","<h1>Hello World</h1>");
         if(htmlPage.containsKey(path))
             return htmlPage.get(path);
