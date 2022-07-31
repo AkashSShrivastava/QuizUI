@@ -15,16 +15,11 @@ import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping({"/","/home"})
 public class FormController  {
 
     @Autowired
     SaveMessageService saveMessageService;
-
-    @GetMapping("/")
-    public String index() {
-        return "redirect:/home";
-    }
 
     @GetMapping
     public String formGet(Model model) {

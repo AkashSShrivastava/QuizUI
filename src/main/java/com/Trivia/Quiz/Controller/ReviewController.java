@@ -15,21 +15,16 @@ import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
-@RequestMapping({ "/", "/saved" })
+@RequestMapping("/index")
 public class ReviewController {
 
     @Autowired
     SaveRatingService saveRatingService;
 
-    @GetMapping("/")
-    public String index() {
-        return "redirect:/saved";
-    }
-
     @GetMapping
     public String formGet(Model model) {
         model.addAttribute("user",new UserContact());
-        return "saved";
+        return "index";
     }
 
     @PostMapping
@@ -43,30 +38,30 @@ public class ReviewController {
             else
                 model.addAttribute("user",new UserContact("","","",true,"Add Message 🙏"));
 
-            return new ModelAndView("saved", (Map<String, ?>)model);
+            return new ModelAndView("index", (Map<String, ?>)model);
         }
 
         if(user.getRate()==0)
         {
             model.addAttribute("user",new UserContact("","","",true,"Add Rating 🙏"));
-            return new ModelAndView("saved", (Map<String, ?>)model);
+            return new ModelAndView("index", (Map<String, ?>)model);
         }
 
         model.addAttribute("user",new UserContact("","","",false,"Submitted 😁"));
         saveRatingService.saveRating("subject", user.getMessage());
         System.out.println(user.toString());
-        return new ModelAndView("saved", (Map<String, ?>) model);
+        return new ModelAndView("index", (Map<String, ?>) model);
     }
 
 //    @GetMapping
 //    public String main(Model model) {
 //        model.addAttribute("rating", new Rating());
-//        return "saved";
+//        return "index";
 //    }
 //
 //    @PostMapping
 //    public String save(Rating rating, Model model) {
 //        model.addAttribute("rating", rating);
-//        return "saved";
+//        return "index";
 //    }
 }
