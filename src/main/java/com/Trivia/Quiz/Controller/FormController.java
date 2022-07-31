@@ -48,7 +48,7 @@ public class FormController  {
 
         model.addAttribute("user",new UserContact("","","",false,"Message Sent! 😁"));
         saveMessageService.saveMessage("subject", user.getMessage());
-        System.out.println(model);
+        System.out.println(model+ user.toString());
         return new ModelAndView("home", (Map<String, ?>) model);
     }
 }
